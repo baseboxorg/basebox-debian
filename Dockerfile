@@ -21,4 +21,5 @@ ENV LC_ALL C.UTF-8
 
 
 EXPOSE 22
+
 CMD ["/run.sh"]
