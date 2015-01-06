@@ -7,9 +7,10 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssh-
 
 RUN mkdir -p /var/run/sshd && sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
 
-ADD set_root_pw.sh /set_root_pw.sh && /
-    run.sh /run.sh
-    
+ADD set_root_pw.sh /set_root_pw.sh
+
+ADD run.sh /run.sh
+
 RUN chmod +x /*.sh
 
 RUN dpkg-reconfigure locales && \
